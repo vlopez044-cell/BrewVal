@@ -1,154 +1,212 @@
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Valeria López">
-    <meta name="keywords" content="cafetería, postres, café, bebidas">
-    <title>BrewVal | Postres y Tradición</title>
 
 ```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<title>BrewVal | Café & Postres</title>
+
 <link rel="stylesheet" href="css/styles.css">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
 ```
 
 </head>
+
 <body>
 
+```
+<!-- HEADER -->
+
 <header class="header">
+
     <div class="logo">
-        <h1>BrewVal</h1>
-        <p>Con Val siempre cabe un capricho</p>
+        BrewVal
     </div>
 
-```
-<nav class="nav">
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#mision">Misión</a></li>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
-```
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#menu">Menú</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+
+    </nav>
 
 </header>
 
+<!-- HERO -->
+
 <section id="inicio" class="hero">
-    <div class="hero-content">
-        <h2>Bienvenidos a BrewVal</h2>
-        <p>Tradición que se disfruta con cada bocado</p>
 
-```
-    <a href="#menu" class="btn">Ver Menú</a>
-</div>
-```
+    <div class="hero-overlay">
 
-</section>
+        <h1>Con Val siempre cabe un capricho</h1>
 
-<section id="mision" class="mision">
-    <h2>Nuestra Misión</h2>
+        <p>
+            Café de especialidad, postres artesanales
+            y momentos que saben a felicidad.
+        </p>
 
-```
-<p>
-    Crear momentos especiales a través de bebidas y postres
-    preparados con ingredientes de calidad y mucho cariño.
-</p>
-```
+        <a href="#menu" class="btn">
+            Ver Menú
+        </a>
+
+    </div>
 
 </section>
 
-<section id="menu" class="menu">
+<!-- NOSOTROS -->
 
-```
-<h2>Nuestro Menú</h2>
+<section id="nosotros" class="about">
 
-<div class="menu-filters">
-    <button class="filter-btn active" data-category="all">Todo</button>
-    <button class="filter-btn" data-category="postres">Postres</button>
-    <button class="filter-btn" data-category="bebidas">Bebidas</button>
-    <button class="filter-btn" data-category="especialidades">Especialidades</button>
-</div>
+    <div class="about-text">
 
-<div class="menu-items"></div>
-```
+        <span>Sobre Nosotros</span>
+
+        <h2>
+            Más que una cafetería,
+            una experiencia.
+        </h2>
+
+        <p>
+            En BrewVal creemos que los mejores momentos
+            ocurren alrededor de una taza de café y un
+            delicioso postre.
+        </p>
+
+        <p>
+            Nuestro objetivo es crear un espacio cálido,
+            elegante y acogedor donde cada visita se
+            convierta en un recuerdo especial.
+        </p>
+
+    </div>
+
+    <div class="about-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200"
+            alt="cafetería">
+
+    </div>
 
 </section>
+
+<!-- MENÚ -->
+
+<section id="menu" class="menu-section">
+
+    <h2>Nuestros Favoritos</h2>
+
+    <div class="menu-items"></div>
+
+</section>
+
+<!-- GALERÍA -->
 
 <section id="galeria" class="gallery">
 
-```
-<h2>Nuestra Galería</h2>
+    <h2>Momentos BrewVal</h2>
 
-<div class="row">
+    <div class="gallery-grid">
 
-    <div class="column">
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800"
-             alt="cafetería">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800">
+
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800">
+
+        <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=800">
+
     </div>
-
-    <div class="column">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
-             alt="postres">
-    </div>
-
-    <div class="column">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800"
-             alt="café">
-    </div>
-
-</div>
-```
 
 </section>
 
-<aside class="aside">
+<!-- TESTIMONIOS -->
 
-```
-<h3>Promociones</h3>
+<section class="testimonials">
 
-<p>
-    Hora dulce: de 4 a 6 pm compra un café
-    y recibe un postre al 50%.
-</p>
+    <h2>Lo que dicen nuestros clientes</h2>
 
-<p>
-    Cada 10 cafés, el 11° es gratis.
-</p>
-```
+    <div class="cards">
 
-</aside>
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>
+                "El mejor cheesecake que he probado."
+            </p>
+        </div>
 
-<footer id="contacto" class="footer">
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>
+                "Ambiente hermoso y café delicioso."
+            </p>
+        </div>
 
-```
-<h3>BrewVal</h3>
+        <div class="card">
+            ⭐⭐⭐⭐⭐
+            <p>
+                "Perfecto para trabajar o pasar la tarde."
+            </p>
+        </div>
 
-<p>
-    Puerto Príncipe 220, Valle Dorado,
-    Tlalnepantla, Estado de México
-</p>
+    </div>
 
-<p>Tel: +52 55 13 00 68 29</p>
+</section>
 
-<div class="social">
+<!-- CONTACTO -->
 
-    <a href="#"><i class="fab fa-facebook"></i></a>
+<section id="contacto" class="contact">
 
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <h2>Visítanos</h2>
 
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <p>
+        Puerto Príncipe 220, Valle Dorado,
+        Tlalnepantla, Estado de México.
+    </p>
 
-</div>
+    <p>
+        Tel: +52 55 13 00 68 29
+    </p>
 
-<p>© 2025 BrewVal</p>
-```
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="social">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+
+    </div>
+
+    <p>
+        © 2025 BrewVal | Todos los derechos reservados
+    </p>
 
 </footer>
 
 <script src="js/script.js"></script>
+```
 
 </body>
+
 </html>
+
