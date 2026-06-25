@@ -1,169 +1,131 @@
-// =========================
-// PRODUCTOS DEL MENÚ
-// =========================
+// ==========================
+// PRODUCTOS BREWVAL
+// ==========================
 
-const menuItems = [
+const productos = [
 
-```
-{
-    id: 1,
-    name: "Cheesecake",
-    category: "postres",
-    price: "$60",
-    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800",
-    description: "Delicioso cheesecake de zarzamora."
-},
+    {
+        nombre: "Cheesecake de Zarzamora",
+        precio: "$60",
+        imagen: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1200",
+        descripcion: "Suave cheesecake artesanal con zarzamora."
+    },
 
-{
-    id: 2,
-    name: "Rol de Canela",
-    category: "especialidades",
-    price: "$70",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
-    description: "Rol de canela recién horneado."
-},
+    {
+        nombre: "Brownie Premium",
+        precio: "$25",
+        imagen: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=1200",
+        descripcion: "Brownie de chocolate intenso con nuez."
+    },
 
-{
-    id: 3,
-    name: "Brownie",
-    category: "postres",
-    price: "$25",
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800",
-    description: "Brownie de chocolate con nuez."
-},
+    {
+        nombre: "Matcha Latte",
+        precio: "$50",
+        imagen: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1200",
+        descripcion: "Bebida cremosa elaborada con matcha japonés."
+    },
 
-{
-    id: 4,
-    name: "Café Helado",
-    category: "bebidas",
-    price: "$45",
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800",
-    description: "Refrescante café helado."
-},
+    {
+        nombre: "Café Americano",
+        precio: "$30",
+        imagen: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200",
+        descripcion: "Nuestro clásico café americano."
+    },
 
-{
-    id: 5,
-    name: "Matcha Latte",
-    category: "bebidas",
-    price: "$50",
-    image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=800",
-    description: "Bebida cremosa de matcha."
-},
+    {
+        nombre: "Rol de Canela",
+        precio: "$70",
+        imagen: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200",
+        descripcion: "Recién horneado con glaseado especial."
+    },
 
-{
-    id: 6,
-    name: "Café Americano",
-    category: "bebidas",
-    price: "$30",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800",
-    description: "Nuestro clásico café americano."
-},
-
-{
-    id: 7,
-    name: "Pastel de Zanahoria",
-    category: "postres",
-    price: "$60",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800",
-    description: "Pastel de zanahoria con receta especial."
-},
-
-{
-    id: 8,
-    name: "Tartas de Frutos Rojos",
-    category: "especialidades",
-    price: "$70",
-    image: "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=800",
-    description: "Tartas elaboradas con frutos rojos frescos."
-}
-```
+    {
+        nombre: "Tarta de Frutos Rojos",
+        precio: "$70",
+        imagen: "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=1200",
+        descripcion: "Preparada con frutos rojos frescos."
+    }
 
 ];
 
-// =========================
+// ==========================
 // CONTENEDOR DEL MENÚ
-// =========================
+// ==========================
 
 const menuContainer = document.querySelector(".menu-items");
 
-// =========================
-// MOSTRAR PRODUCTOS
-// =========================
+// ==========================
+// CREAR TARJETAS
+// ==========================
 
-function displayMenu(items){
+productos.forEach(producto => {
 
-```
-menuContainer.innerHTML = "";
+    menuContainer.innerHTML += `
 
-items.forEach(item => {
+        <div class="menu-card">
 
-    const menuCard = document.createElement("div");
+            <img src="${producto.imagen}" alt="${producto.nombre}">
 
-    menuCard.classList.add("menu-item");
+            <div class="menu-card-content">
 
-    menuCard.innerHTML = `
-        <img src="${item.image}" alt="${item.name}">
-        <h3>${item.name}</h3>
-        <p>${item.description}</p>
-        <span>${item.price}</span>
+                <h3>${producto.nombre}</h3>
+
+                <p>${producto.descripcion}</p>
+
+                <br>
+
+                <span class="price">
+                    ${producto.precio}
+                </span>
+
+            </div>
+
+        </div>
+
     `;
 
-    menuContainer.appendChild(menuCard);
 });
-```
 
-}
+// ==========================
+// EFECTO APARICIÓN AL HACER SCROLL
+// ==========================
 
-// =========================
-// MOSTRAR TODO AL CARGAR
-// =========================
+const elementos = document.querySelectorAll(
+    ".about, .menu-section, .gallery, .testimonials, .contact"
+);
 
-displayMenu(menuItems);
+const mostrarElemento = () => {
 
-// =========================
-// BOTONES DE FILTRO
-// =========================
+    elementos.forEach(elemento => {
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+        const posicion = elemento.getBoundingClientRect().top;
 
-filterButtons.forEach(button => {
+        const pantalla = window.innerHeight - 100;
 
-```
-button.addEventListener("click", () => {
+        if (posicion < pantalla) {
 
-    document
-        .querySelector(".filter-btn.active")
-        .classList.remove("active");
+            elemento.style.opacity = "1";
+            elemento.style.transform = "translateY(0px)";
+        }
 
-    button.classList.add("active");
+    });
 
-    const category = button.dataset.category;
+};
 
-    if(category === "all"){
+elementos.forEach(elemento => {
 
-        displayMenu(menuItems);
-
-    }else{
-
-        const filteredItems = menuItems.filter(item =>
-            item.category === category
-        );
-
-        displayMenu(filteredItems);
-    }
-});
-```
+    elemento.style.opacity = "0";
+    elemento.style.transform = "translateY(40px)";
+    elemento.style.transition = "all 1s ease";
 
 });
 
-// =========================
+window.addEventListener("scroll", mostrarElemento);
+
+mostrarElemento();
+
+// ==========================
 // MENSAJE DE BIENVENIDA
-// =========================
+// ==========================
 
-window.addEventListener("load", () => {
-
-```
-console.log("Bienvenido a BrewVal ☕🍰");
-```
-
-});
+console.log("☕ Bienvenido a BrewVal");
